@@ -1,0 +1,236 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <script>
+    function getSecondsSinceDate(year, month, day, hour, minute, second) {
+        var startDate = new Date(year, month - 1, day, hour, minute, second);
+        var startTimestamp = startDate.getTime();
+        var now = new Date();
+        var diffMilliseconds = now - startTimestamp;
+        var diffSeconds = diffMilliseconds / 1000;
+        return diffSeconds;
+    }
+
+    window.onload = function() {
+        var seconds = getSecondsSinceDate(2004, 2, 1, 12, 0, 0); 
+
+        document.querySelector('[data-line-nr="07"] .number').textContent = seconds.toFixed(0); 
+    };
+</script>
+  <div id="cursorDot"></div>
+  <div id="cursorCircle"></div>
+
+  <div id="landingPage">
+    <section id="stars"></section>
+    <div id="clickToEnter">Click to Enter</div>
+  </div>
+  
+  <div id="iPage">
+    <section id="scene"></section>
+  </div>
+  <div id="navigation">
+    <div id="menu">
+      <button type="button" id="menu-toggle">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>  
+        <div id="menu-toggle-label">
+          <span class="word">UdIT</span>
+          <span class="word">KaRTHIK</span>
+        </div>
+      </button>
+      <div id="menu-gradient"></div>
+      <div id="menu-gradient-blur"></div>
+      <div id="menu-arcs-wrapper">
+        <svg id="menu-arcs">
+          <circle class="menu-arc" cx="50%" cy="50%" r="18%"></circle>
+          <circle class="menu-arc" cx="50%" cy="50%" r="30%"></circle>
+          <circle class="menu-arc" cx="50%" cy="50%" r="42%"></circle>
+        </svg>
+      </div>
+      <div id="menu-links">
+        <a class="link" href="#home">
+          <span class="anchor"></span>  
+          <span class="index">01</span>  
+          <span class="label">Intro</span>  
+        </a>
+        <a class="link" href="#about">
+          <span class="anchor"></span>  
+          <span class="index">02</span>  
+          <span class="label">About Me</span>  
+        </a>
+        <a class="link" href="#experience">
+          <span class="anchor"></span>  
+          <span class="index">03</span>  
+          <span class="label">Experience</span>  
+        </a>
+        <a class="link" href="#contact-section">
+          <span class="anchor"></span>  
+          <span class="index">04</span>  
+          <span class="label">Contact</span>  
+        </a>
+      </div>
+  </div>
+
+</div>
+
+<div id="content">
+  <div class="solar-syst">
+    <div class="sun"></div>
+    <div class="mercury"></div>
+    <div class="venus"></div>
+    <div class="earth"></div>
+    <div class="mars"></div>
+    <div class="jupiter"></div>
+    <div class="saturn"></div>
+    <div class="uranus"></div>
+    <div class="neptune"></div>
+    <div class="pluto"></div>
+    <div class="asteroids-belt"></div>
+  </div>  
+</div>
+<div id="mainContent">
+  <div id="card-overlay" class="card-overlay" style="display: none;">
+    <div class="card">
+      <button id="close-card" class="close-card">&times;</button>
+      
+      <div class="card-content">
+      </div>
+    </div>
+  </div>
+  <header>
+    <h1 data-value="Udit Karthik">Udit Karthik</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href = "#experience">Experience</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  
+  <section id="home">
+    <div class="section-content">
+      <div id="intro">
+      <h2>Hello, My name is Udit</h2>
+      <p>I am a student and fullstack developer. </p>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="about">
+    <h2>About Me</h2>
+    <div class="code-container"> 
+      <div class="code-wrp">
+        <div data-line-nr="01" class="code-l"><span class="keyword">class</span> Udit_Karthik {</div>
+        <div data-line-nr="04" class="code-l"><span class="keyword">public:</span></div>
+        <div data-line-nr="05" class="code-l">Udit_Karthik() :</div>
+        <div data-line-nr="06" class="code-l"><span class="indent">name</span>(<span class="string">"Udit Karthik"</span>),</div>
+        <div data-line-nr="07" class="code-l"><span class="indent">dayOfBirthTimestamp</span>(<span class="number">602745592</span>),</div>
+        <div data-line-nr="08" class="code-l"><span class="indent">email</span>(<span class="string">"karthudit@gmail.com"</span>) {}</div>
+        <div data-line-nr="09" class="code-l"><span class="keyword">std::vector</span><std::string> education();</div>
+        <div data-line-nr="10" class="code-l"><span class="keyword">std::vector</span><std::string> skills();</div>
+        <div data-line-nr="11" class="code-l"><span class="keyword">private:</span></div>
+        <div data-line-nr="12" class="code-l"><span class="indent">std::vector</span><std::string> goals_</std::string>;</span></div>
+        <div data-line-nr="15" class="code-l">};</div>
+      </div>      
+    </div>
+  </div>
+  
+
+  <div id="experience">
+    <div class="section-content">
+      <h2 class="section-title">Experience</h2>
+      <div class="small-card" id="CoyoteLand">
+        <div class="card-front">
+          <h3>CoyoteLand</h3>
+          <p>Key contributions in land data analysis. Built land scraper, collected 150,000 datapoints, and made visualizations</p>
+        </div>
+        <div class="card-back">
+          <h3>CoyoteLand</h3>
+          <p>As a key member of the CoyoteLand team, I contributed to developing and enhancing land data analysis tools. My responsibilities and achievements included:</p>
+          <ul>
+            <li>Utilizing Puppeteer to scrape data on over 150,000 data points for nationwide county land data.</li>
+            <li>Designing and implementing a robust GraphQL schema, enhancing data retrieval efficiency by 30%.</li>
+            <li>Engineering the server backend with Express and Node.js, ensuring smooth and scalable communication between the database and client applications.</li>
+            <li>Creating interactive and user-friendly visualizations with React, making complex county lot data accessible through intuitive maps and charts.</li>
+            <li>Implementing marketing strategies that significantly boosted sales, leading to six figures in profit.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="small-card" id="GG4L">
+        <div class="card-front">
+          <h3>GG4L</h3>
+          <p>Key contributions in implementing SAML and developing secure interfaces for student access to educational apps.</p>
+        </div>
+        <div class="card-back">
+          <h3>GG4L</h3>
+          <p>At GG4L, I played a pivotal role in enhancing the security and efficiency of educational software. Key contributions include:</p>
+          <ul>
+            <li>Implementing SAML to establish secure Single Sign-On (SSO) protocols between educators and educational applications.</li>
+            <li>Collaborating with instructors to develop secure interfaces for student access to school-sanctioned educational apps.</li>
+            <li>Analyzing user data to create insightful weekly reports, offering actionable recommendations for system improvements.</li>
+            <li>Providing instructional support and guidance for administrative actions within the educational software ecosystem.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="small-card" id="Speech Coach">
+        <div class="card-front">
+          <h3>Speech Coach</h3>
+          <p>Key contributions in guiding and mentoring students in the art of public speaking.</p>
+        </div>
+        <div class="card-back">
+          <h3>Speech Coach</h3>
+          <p>As a Speech Coach, I guided and mentored middle and high school students in the art of public speaking. My key accomplishments include:</p>
+          <ul>
+            <li>Providing comprehensive instruction in public speaking and presentation skills.</li>
+            <li>Offering continuous support and mentorship to students.</li>
+            <li>Leading teams to achieve first place in district competitions and fourth place at the state level.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="small-card" id="Freelancer">
+        <div class="card-front">
+          <h3>Freelancer</h3>
+          <p>Key contributions in developing tools and applications to aid in data analysis and decision-making.</p>
+        </div>
+        <div class="card-back">
+          <h3>Freelancer</h3>
+          <p>As a Freelancer, I developed various tools and applications to aid in data analysis and decision-making. My projects included:</p>
+          <ul>
+            <li>Creating a tool using Selenium and Flask to scrape house comps from Redfin.</li>
+            <li>Developing an application to track MMA fighter records and betting odds, utilizing Beautiful Soup and SQLite.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-section">
+    <div class="section-content">
+      <h2>Contact Me</h2>
+      <div class = "contact-section">
+      <div class="contact-icon">
+        <a href="https://www.linkedin.com/in/udit-karthikeyan-8a454b236/" target="_blank"><i class="fab fa-linkedin fa-beat"></i></a>
+      </div>
+      <div class="contact-icon">
+        <a href="mailto:uditkarthik@gmail.com"><i class="far fa-envelope"></i></a>
+      </div>
+      <div class="contact-icon">
+        <a href="https://github.com/UditKarth" target="_blank"><i class="fab fa-github-square"></i></a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+  <footer>
+    <p>© 2023 Udit Karthik. All rights reserved.</p>
+  </footer>
