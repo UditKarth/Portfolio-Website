@@ -412,6 +412,7 @@ function stars2(count, maxArea, minArea = 0, starSize = 0) {
   
     links.forEach((link) => {
       link.addEventListener('click', (e) => {
+        console.log('clicked');
         e.preventDefault();
         const content = document.querySelector(link.getAttribute('href')).innerHTML;
         showCard(content);
@@ -422,4 +423,8 @@ function stars2(count, maxArea, minArea = 0, starSize = 0) {
       cardOverlay.style.display = 'none'; // Hide the overlay
     });
   });
+  
+
+
+
   

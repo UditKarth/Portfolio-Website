@@ -371,6 +371,74 @@
   transition: transform 250ms;
 }
 
+.link .orbiting-object {
+  position: absolute;
+  width: clamp(3px, 0.3vmax, 9px); 
+  height: clamp(3px, 0.3vmax, 9px);
+  background-color: white; /* Adjust color as needed */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(40px); /* Adjust distance from center */
+  }
+  50% {
+    transform: rotate(180deg) translateX(50px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(40px);
+  }
+}
+
+.orbit-label {
+  position: relative;
+  bottom: 100%; /* Position above the object */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap; /* Prevent the label from wrapping */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s, transform 0.3s; /* Smooth transition for hover */
+  pointer-events: none; /* Prevents label from interfering with hover on object */
+  transform-origin: center bottom;
+}
+
+
+.orbiting-object:hover .orbit-label {
+  opacity: 1; /* Show the label */
+  animation-play-state: paused;
+  transform: translateX(-50%) translateY(-10px); /* Slightly move up */
+}
+#subpage1 {
+  animation: orbit 10s linear infinite; /* Adjust timing as needed */
+}
+
+#subpage1:hover {
+  animation-play-state: paused; /* Pause the orbit animation */
+  transform: translate(-50%, -50%) rotate(0deg) translateX(40px) scale(1.5);
+  background-color: #00a2ff;  
+}
+
+#subpage2 {
+  animation: orbit 12s linear infinite;
+  animation-delay: 0.5s; /* Stagger the start for a dynamic effect */
+}
+#subpage2:hover {
+  animation-play-state: paused; /* Pause the orbit animation */
+  transform: translate(-50%, -50%) rotate(0deg) translateX(40px) scale(1.5);  
+  background-color: #00a2ff; 
+}
+#subpage3 {
+  animation: orbit 14s linear infinite;
+  animation-delay: 1s;
+}
+#subpage3:hover {
+  animation-play-state: paused; /* Pause the orbit animation */
+  transform: translate(-50%, -50%) rotate(0deg) translateX(40px) scale(1.5);  
+  background-color: #00a2ff; 
+}
 #content {
   align-items: center;
   display: flex;
@@ -624,7 +692,10 @@ section {
   }
   
   .section-content {
-    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 1rem;
     overflow: hidden;
   }
 
@@ -1099,7 +1170,7 @@ section {
   border: none;
   color: white;
   font-size: 2rem;
-  cursor: pointer;
+  cursor: none;
 }
 .card {
   width: 95%;
@@ -1194,60 +1265,27 @@ section {
   }
 }
 
-.card .small-card {
-  position: absolute;
-  width: 10%; 
-  height: 10%;
-  margin: 5px;
-  border: 1px solid rgb(255, 255, 255);
-  overflow: hidden;
-  transition: all 0.3s ease;
+
+
+.cards-container {
+  padding: 20px;
 }
 
-.card .small-card:hover {
-  transform: scale(1.05);
-}
-
-
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  backface-visibility: hidden; /* Hide the back side when flipped */
-  transition: transform 0.6s;
+#experience .experience-cards-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 20px;
 }
 
-.card-back {
-  transform: rotateY(180deg); /* Flip the back card */
+.experience-card {
+  background: #352b2b; /* Adjust background color as needed */
+  border: 1px solid #ccc; /* Border for the card */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
-.small-card:hover .card-front {
-  transform: rotateY(-180deg); /* Flip on hover */
-}
-
-.small-card:hover .card-back {
-  transform: rotateY(0deg);
-}
-
-.small-card:nth-child(1) {
-  top: 5%;
-  left: 5%;
-}
-
-.small-card:nth-child(2) {
-  top: 5%;
-  right: 5%;
-}
-
-.small-card:nth-child(3) {
-  bottom: 5%;
-  left: 5%;
-}
-
-.small-card:nth-child(4) {
-  bottom: 5%;
-  right: 5%;
+.experience-card:hover {
+  transform: scale(1.05); /* Add a transition effect */
+  transition: ease-in-out 0.3s;
 }
